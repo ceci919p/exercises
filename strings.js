@@ -58,6 +58,7 @@ console.log(
 const str1 = " There is   space here \n  ";
 //trim removes spacing in the beginning and end plus the newline \n
 const str2 = str1.trim();
+console.log(str1);
 
 // const fullName = "Peter Heronimous Lind";
 // const firstName = fullName.substring(0, 5);
