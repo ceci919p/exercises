@@ -26,3 +26,9 @@ console.log("liftoff");
  */
 
 //from 1 to 19, but only counts odd numbers (no if-statement, change the increment!)
+/* for (let counter = 1; counter < 20; counter += 2) {
+  console.log(counter);
+}
+ */
+
+//from 1 to 16777216, but doubling each time (2, 4, 8, 16..)
