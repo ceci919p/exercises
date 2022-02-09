@@ -45,3 +45,9 @@ console.log("liftoff");
 /* for (let counter = 111; counter < 139; counter += 3) {
   console.log(counter);
 } */
+
+//from 100 down to 0 in steps of 10
+
+for (let counter = 100; counter > -1; counter -= 10) {
+  console.log(counter);
+}
