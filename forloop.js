@@ -32,3 +32,10 @@ console.log("liftoff");
  */
 
 //from 1 to 16777216, but doubling each time (2, 4, 8, 16..)
+/* for (let counter = 1; counter < 16777217; counter += 0.25) {
+  console.log(counter);
+} */
+
+/* for (let counter = 1; counter < 16777217; counter *= 2) {
+  console.log(counter);
+} */
