@@ -39,3 +39,9 @@ console.log("liftoff");
 /* for (let counter = 1; counter < 16777217; counter *= 2) {
   console.log(counter);
 } */
+
+//from 111 to 138, in steps of 3 (meaning the second number is 114 (111+3))
+
+/* for (let counter = 111; counter < 139; counter += 3) {
+  console.log(counter);
+} */
