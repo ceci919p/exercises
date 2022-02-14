@@ -51,8 +51,8 @@ function hexToRgb(hex) {
   console.log(b); //returns the right value
 
   //return it as an object with the right values of rgb
-  let hexColor = { r, g, b };
-  console.log(hexColor);
+  let rgbColor = { r, g, b };
+  console.log(rgbColor);
 }
 
 hexToRgb("#ff64c8");
@@ -61,6 +61,20 @@ console.log(hexToRgb);
 
 //------HexToRGB EXERCISE--------
 
-function rgbToHex() {}
+//string base 16
+//remove rgb (beginning)
+//use slice => extracts a section of a string and returns it as new string
+//we use -2 because we need the 2 last numbers from r, 2 from g etc.
 
-rgbToHex();
+rgbToHex(245, 128, 202);
+
+function rgbToHex(r, g, b) {
+  let redColor = r.toString(16).slice(-2);
+  let greenColor = g.toString(16).slice(-2);
+  let blueColor = b.toString(16).slice(-2);
+
+  let hexColor = { redColor, greenColor, blueColor };
+  console.log(`#${redColor}${greenColor}${blueColor}`);
+}
+
+rgbToHex(245, 128, 202);
