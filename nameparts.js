@@ -51,3 +51,29 @@ function getNameParts(fullName) {
 }
 
 getNameParts("Cecilie Jasmin Jørgensen");
+
+//-----FULLNAME FUNCTION EXERCISE
+
+/* function fullName(lastName, firstName, middleName) {
+  const theFullName = firstName.concat(" ", middleName, " ", lastName);
+  console.log(`fullName: ${theFullName}`);
+}
+
+fullName("Potter", "Harry", "James"); */
+
+function fullName(lastName, firstName, middleName) {
+  console.log("middleName");
+  if (middleName !== undefined) {
+    console.log(`${firstName} ${middleName} ${lastName}`);
+  } else {
+    console.log(`${firstName}  ${lastName}`);
+  }
+}
+
+fullName("Potter", "Harry", "James"); // "Harry James Potter"
+
+fullName("Potter", "Harry"); // "Harry Potter"
+
+fullName("Harry", "Potter"); // "Potter Harry"
+
+fullName("Potter", "Harry", "James", "Pottypotpot", "Bootybootboot"); // Harry James Potter
