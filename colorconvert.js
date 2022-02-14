@@ -51,7 +51,16 @@ function hexToRgb(hex) {
   console.log(b); //returns the right value
 
   //return it as an object with the right values of rgb
-  return { r, g, b };
+  let hexColor = { r, g, b };
+  console.log(hexColor);
 }
 
 hexToRgb("#ff64c8");
+
+console.log(hexToRgb);
+
+//------HexToRGB EXERCISE--------
+
+function rgbToHex() {}
+
+rgbToHex();
