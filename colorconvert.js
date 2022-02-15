@@ -64,7 +64,8 @@ console.log(hexToRgb);
 //string base 16
 //remove rgb (beginning)
 //use slice => extracts a section of a string and returns it as new string
-//we use -2 because we need the 2 last numbers from r, 2 from g etc.
+//we use -2 because we need to remove the 2 last numbers from r, 2 from g etc.
+//we have "chopped" the hex code into 3 strings
 
 rgbToHex(245, 128, 202);
 
@@ -78,3 +79,31 @@ function rgbToHex(r, g, b) {
 }
 
 rgbToHex(245, 128, 202);
+
+//------cssToRGB EXERCISE--------
+
+function cssToRgb(colorString) {
+  let redColor = parseInt(
+    colorString.substring(
+      colorString.indexOf("(") + 1,
+      colorString.indexOf(",")
+    )
+  );
+  let greenColor = parseInt(
+    colorString.substring(
+      colorString.indexOf(" ") + 1,
+      colorString.lastIndexOf(",")
+    )
+  );
+  let blueColor = parseInt(
+    colorString.substring(
+      colorString.lastIndexOf(",") + 2,
+      colorString.lastIndexOf(")")
+    )
+  );
+
+  let rgbColor = { redColor, greenColor, blueColor };
+  console.log(rgbColor);
+}
+
+cssToRgb("rgb(245, 128, 202)");
