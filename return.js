@@ -80,7 +80,7 @@ console.log(
   fullName("Potter", "Harry", "James", "Pottypotpot", "Bootybootboot")
 ); */
 
-//-----capitalize 2------
+//-------------------capitalize 2-------------------------------------------------------------------------------
 
 //our old version without console.log(capitalize(name)):
 
@@ -109,10 +109,12 @@ function capitalize(str) {
 //-------if i remove the console.log(cap); I can still find the value of cap by calling it manually.
 //-------The same goes as the function capitalize();
 
+//------------------------------------------------------------------------------------------------------------------
+
 //------- fullname with return 2 (no console.log)
 
 //storing result in a variable:
-
+/* 
 const firstName = "Cecilie";
 const middleName = "";
 const lastName = "Jørgensen";
@@ -131,11 +133,71 @@ function fullName(lastName, firstName, middleName) {
   } else {
     return `${firstName} ${lastName}`;
   }
-}
+} */
 
 //then console.log that
 //console.log(getFullName);
 
-//-----getNameParts(fullName)------
+//--------------------------------------------------------------------------------------------------------------
 
-function getNameParts() {}
+//-----getNameParts(fullName) 2------
+
+//storing the result in a variable
+//const str = "CEciLIE";
+
+//test the function by calling it
+//const cap = capitalize(str);
+
+//-----------------------------------------------------------------------------------------
+
+//storing result in a variable:
+let fullName = "cecilie jasmin jørgensen";
+
+//test the function by calling it
+const getAllNameParts = getNameParts(fullName);
+
+function getNameParts(fullName) {
+  //find firstName
+  let firstName = fullName.substring(
+    fullName.indexOf(0),
+    fullName.indexOf(" ")
+  );
+
+  //calling the function capitalize to capitalize first letters
+
+  firstName = capitalize(firstName); //doesnt work
+
+  //find middleName
+
+  let middleName = fullName.substring(
+    fullName.indexOf(" ") + 1,
+    fullName.lastIndexOf(" ")
+  );
+
+  //calling the function capitalize to capitalize first letters
+  middleName = capitalize(middleName); //doesnt work
+
+  //find lastName
+  let lastName = fullName.substring(fullName.lastIndexOf(" ") + 1);
+
+  //calling the function capitalize to capitalize first letters
+
+  lastName = capitalize(lastName); //doesnt work
+
+  return { firstName, middleName, lastName };
+}
+
+//then console.log that
+//console.log(fullName);
+
+//Try to call the fullName function with the result from this function,
+//and check if it returns the same (capitalizes) full name as you gave to this function!
+//Remember that fullName doesn't take an object,
+//so you'll have to split the result into three different variables when calling it.
+
+//-------------ANSWER:
+
+//Optional: Make the capitalization work correctly for names with two or more middle names.
+//Do it without modifying the capitalize function. Maybe you can use a split, a loop, and later a join
+
+//------------ANSWER:
