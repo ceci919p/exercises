@@ -59,7 +59,7 @@ hexToRgb("#ff64c8");
 
 console.log(hexToRgb);
 
-//------HexToRGB EXERCISE--------
+//------RGBtoHex EXERCISE--------
 
 //string base 16
 //remove rgb (beginning)
