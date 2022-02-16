@@ -107,3 +107,35 @@ function cssToRgb(colorString) {
 }
 
 cssToRgb("rgb(245, 128, 202)");
+
+//-----------------------WITH RETURN--------------------
+
+//------------------HEXTORGB--------------------------------------------
+//make conversion function
+
+/* function hexToRgb(hex) {
+  //get hex values and convert them to rgb
+  let r = parseInt(hex.substring(1, 3), 16);
+  let g = parseInt(hex.substring(3, 5), 16);
+  let b = parseInt(hex.substring(5, 7), 16);
+  //console.log("rgb", r, g, b); // should be 255, 100, 200
+
+  //return it as an object with the right values of rgb
+  return { r, g, b };
+}
+
+hexToRgb("#ff64c8"); */
+
+//------------------RGBTOHEX--------------------------------------------
+
+/*function rgbToHex(r, g, b) {
+  let redColor = r.toString(16).slice(-2);
+  let greenColor = g.toString(16).slice(-2);
+  let blueColor = b.toString(16).slice(-2);
+
+  let hexColor = { redColor, greenColor, blueColor };
+
+  return `#${redColor}${greenColor}${blueColor}`;
+}
+
+rgbToHex(245, 128, 202); */
