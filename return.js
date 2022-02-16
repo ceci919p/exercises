@@ -220,15 +220,16 @@ console.log(getAllNameParts);
 
 //--------------COLLECT 3 STRINGS TO A FULLNAME------------------------
 
-let lastName, firstName, middleName;
-const getFullName = fullName(lastName, firstName, middleName); //str is not defined
+//let lastName, firstName, middleName;
+//const getFullName = fullName(lastName, firstName, middleName); //str is not defined
 
 function fullName(lastName, firstName, middleName) {
-  firstName = capitalize(firstName); //str is not defined
-  middleName = capitalize(middleName);
+  firstName = capitalize(firstName);
+  middleName = capitalizeMiddleName(middleName);
   lastName = capitalize(lastName);
 
   if (middleName !== undefined) {
+    //middleName = capitalize(middleName);
     return `${firstName} ${middleName} ${lastName}`;
   } else {
     return `${firstName} ${lastName}`;
@@ -242,5 +243,24 @@ console.log(fullName);
 
 function capitalize(str) {
   str = str.charAt(0).toUpperCase() + str.substring(1).toLowerCase(); //str is not defined
-  return `${cap}`;
+  return `${str}`;
+}
+
+function capitalizeMiddleName(middleName) {
+  //capitalize the first middlename
+  middleName = capitalize(middleName);
+
+  //split middleName into an array
+  const middleNameArray = middleName.split("");
+
+  middleNameArray.forEach((element, index, array) => {
+    // if the element contains a "-" or space make the letter afterwards uppercase
+    if (element === "-" || element === " ") {
+      array[index + 1] = array[index + 1].toUpperCase();
+    }
+  });
+
+  //then join the array into a new string by concat all elements in the array
+  let result = middleNameArray.join("");
+  return result;
 }
