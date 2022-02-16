@@ -1,10 +1,10 @@
 "use strict";
+
 /* 
 const result = greeting("Cecilie");
 function greeting(firstName) {
   return `hello ${firstName}`;
 }
-
 console.log(result); //returns "hello Cecilie" */
 //you can change cecilie to any name, literally:
 
@@ -12,7 +12,6 @@ console.log(result); //returns "hello Cecilie" */
 function greeting(firstName) {
   return `hello ${firstName}`;
 }
-
 /* console.log(result); //returns "hello anyname" */
 /*console.log(greeting("any name")); // returns "hello anyname" as it is the same as result */
 
@@ -27,11 +26,9 @@ console.log(greeting("any name")); */
 //------------function called inside a template literal:----------------
 
 /* const txt = `Greeting is ${greeting("A Name")}`;
-
 function greeting(firstName) {
   return `hello ${firstName}`;
 }
-
 console.log(txt); //returns greeting is hello a name, it works */
 
 //function called manually
@@ -52,10 +49,8 @@ function greeting(firstName) {
 
 /* function capitalize(str) {
   str = str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
-
   return `My name is ${str}`;
 }
-
 console.log(capitalize("cecIliE")); */
 
 //---------fullname exercise with return
@@ -67,15 +62,10 @@ console.log(capitalize("cecIliE")); */
     return `${firstName} ${lastName}`;
   }
 }
-
 console.log(fullName("Potter", "Harry", "James"));
-
 console.log(fullName("Potter", "Harry", "James")); // "Harry James Potter"
-
 console.log(fullName("Potter", "Harry")); // "Harry Potter"
-
 console.log(fullName("Harry", "Potter")); // "Potter Harry"
-
 console.log(
   fullName("Potter", "Harry", "James", "Pottypotpot", "Bootybootboot")
 ); */
@@ -85,7 +75,7 @@ console.log(
 //our old version without console.log(capitalize(name)):
 
 //storing the result in a variable
-const str = "CEciLIE";
+/* const str = "CEciLIE";
 
 //test the function by calling it
 const cap = capitalize(str);
@@ -94,7 +84,7 @@ function capitalize(str) {
   str = str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
 
   return `${str}`; //should return newly created, corretly capitalized string
-}
+} */
 
 //then console.log that:
 //console.log(cap); //gets me value of cap, "Cecilie", in the capitalized version
@@ -118,16 +108,13 @@ function capitalize(str) {
 const firstName = "Cecilie";
 const middleName = "";
 const lastName = "Jørgensen";
-
 //test the function by calling it
 const getFullName = fullName(lastName, firstName, middleName);
-
 function fullName(lastName, firstName, middleName) {
   //calling the function capitalize to capitalize first letters
   firstName = capitalize(firstName);
   middleName = capitalize(middleName);
   lastName = capitalize(lastName);
-
   if (middleName !== undefined) {
     return `${firstName} ${middleName} ${lastName}`;
   } else {
@@ -150,7 +137,7 @@ function fullName(lastName, firstName, middleName) {
 
 //-----------------------------------------------------------------------------------------
 
-//storing result in a variable:
+/* //storing result in a variable:
 let fullName = "cecilie jasmin jørgensen";
 
 //test the function by calling it
@@ -185,7 +172,7 @@ function getNameParts(fullName) {
   lastName = capitalize(lastName); //doesnt work
 
   return { firstName, middleName, lastName };
-}
+} */
 
 //then console.log that
 //console.log(fullName);
@@ -201,3 +188,52 @@ function getNameParts(fullName) {
 //Do it without modifying the capitalize function. Maybe you can use a split, a loop, and later a join
 
 //------------ANSWER:
+
+const randomName = "cecilie jørgensen";
+const getAllNameParts = getNameParts(randomName);
+
+function capitalize(str) {
+  let capitalizedName =
+    str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
+
+  return `${capitalizedName}`; //should return newly created, corretly capitalized string
+}
+
+function fullName(lastName, firstName, middleName) {
+  let theFullName;
+  //calling the function capitalize to capitalize first letters
+  firstName = capitalize(firstName);
+  middleName = capitalize(middleName);
+  lastName = capitalize(lastName);
+
+  if (middleName !== undefined) {
+    theFullName = `${firstName} ${middleName} ${lastName}`;
+  } else {
+    theFullName = `${firstName} ${lastName}`;
+  }
+
+  return theFullName;
+}
+
+function getNameParts(inputName) {
+  //find firstName
+  const firstName = inputName.substring(
+    inputName.indexOf(0),
+    inputName.indexOf(" ")
+  );
+
+  //find middleName
+
+  const middleName = inputName.substring(
+    inputName.indexOf(" ") + 1,
+    inputName.lastIndexOf(" ")
+  );
+
+  //find lastName
+  const lastName = inputName.substring(inputName.lastIndexOf(" ") + 1);
+
+  return fullName(lastName, firstName, middleName);
+}
+
+//then console.log that
+console.log(getAllNameParts);
