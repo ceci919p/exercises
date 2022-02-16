@@ -33,11 +33,11 @@ console.log(txt); //returns greeting is hello a name, it works */
 
 //function called manually
 
-const txt = `Greeting is ${greeting("A Name")}`;
+/* const txt = `Greeting is ${greeting("A Name")}`;
 
 function greeting(firstName) {
   return `hello ${firstName}`;
-}
+} */
 
 //we dont have a console.log and we have tried calling in it manually.
 //the return statement ends function execution and specifies a value to be returned to the function caller.
@@ -189,31 +189,12 @@ function getNameParts(fullName) {
 
 //------------ANSWER:
 
-const randomName = "cecilie jørgensen";
-const getAllNameParts = getNameParts(randomName);
+//---------GETNAMEPARTS EXERCISE WITH CALL TO FULLNAME FUNCTION----------------
 
-function capitalize(str) {
-  let capitalizedName =
-    str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
+//--------------CREATE 3 NEW STRINGS------------------------
 
-  return `${capitalizedName}`; //should return newly created, corretly capitalized string
-}
-
-function fullName(lastName, firstName, middleName) {
-  let theFullName;
-  //calling the function capitalize to capitalize first letters
-  firstName = capitalize(firstName);
-  middleName = capitalize(middleName);
-  lastName = capitalize(lastName);
-
-  if (middleName !== undefined) {
-    theFullName = `${firstName} ${middleName} ${lastName}`;
-  } else {
-    theFullName = `${firstName} ${lastName}`;
-  }
-
-  return theFullName;
-}
+let inputName = "cecilie jasmin jørgensen";
+const getAllNameParts = getNameParts(inputName);
 
 function getNameParts(inputName) {
   //find firstName
@@ -223,7 +204,6 @@ function getNameParts(inputName) {
   );
 
   //find middleName
-
   const middleName = inputName.substring(
     inputName.indexOf(" ") + 1,
     inputName.lastIndexOf(" ")
@@ -232,8 +212,35 @@ function getNameParts(inputName) {
   //find lastName
   const lastName = inputName.substring(inputName.lastIndexOf(" ") + 1);
 
-  return fullName(lastName, firstName, middleName);
+  return { firstName, middleName, lastName };
 }
 
 //then console.log that
 console.log(getAllNameParts);
+
+//--------------COLLECT 3 STRINGS TO A FULLNAME------------------------
+
+let lastName, firstName, middleName;
+const getFullName = fullName(lastName, firstName, middleName); //str is not defined
+
+function fullName(lastName, firstName, middleName) {
+  firstName = capitalize(firstName); //str is not defined
+  middleName = capitalize(middleName);
+  lastName = capitalize(lastName);
+
+  if (middleName !== undefined) {
+    return `${firstName} ${middleName} ${lastName}`;
+  } else {
+    return `${firstName} ${lastName}`;
+  }
+}
+
+//then console.log that
+console.log(fullName);
+
+//--------------CAPITALIZE FIRST LETTER OF NAMES------------------------
+
+function capitalize(str) {
+  str = str.charAt(0).toUpperCase() + str.substring(1).toLowerCase(); //str is not defined
+  return `${cap}`;
+}
